@@ -1,0 +1,94 @@
+[2024-07-16 06:15:45] local.ERROR: ErrorException: file_get_contents(http://api.sms.cn/sms/?ac=sendint&amp;uid=lin123456&amp;pwd=5bc3220e179b36d41f525b8fea9f3089&amp;template&amp;template=6000002&amp;mobile=852&amp;content={&quot;code&quot;:&quot;8115&quot;}): failed to open stream: Connection timed out in /www/wwwroot/2ddjjcs/lijun/app/Http/Controllers/Wap/IndexController.php:2553
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'file_get_conten...', '/www/wwwroot/2d...', 2553, Array)
+#1 /www/wwwroot/2ddjjcs/lijun/app/Http/Controllers/Wap/IndexController.php(2553): file_get_contents('http://api.sms....')
+#2 [internal function]: App\Http\Controllers\Wap\IndexController->rmsgcode(Object(Illuminate\Http\Request))
+#3 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(55): call_user_func_array(Array, Array)
+#4 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(44): Illuminate\Routing\Controller->callAction('rmsgcode', Array)
+#5 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Routing/Route.php(203): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\Wap\IndexController), 'rmsgcode')
+#6 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Routing/Route.php(160): Illuminate\Routing\Route->runController()
+#7 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Routing/Router.php(574): Illuminate\Routing\Route->run()
+#8 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#9 /www/wwwroot/2ddjjcs/lijun/app/Http/Middleware/WebMainTain.php(50): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#10 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): App\Http\Middleware\WebMainTain->handle(Object(Illuminate\Http\Request), Object(Closure))
+#11 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#12 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#13 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#14 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#15 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#16 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#17 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#18 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#19 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#20 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#21 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#22 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#23 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#24 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(59): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#25 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#26 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#27 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#28 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Routing/Router.php(576): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#29 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Routing/Router.php(535): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#30 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Routing/Router.php(513): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#31 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(176): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#32 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(30): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#33 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#34 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#35 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#36 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(30): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#37 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#38 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#39 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#40 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\ValidatePostSize->handle(Object(Illuminate\Http\Request), Object(Closure))
+#41 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#42 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(46): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#43 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(148): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#44 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#45 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#46 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(151): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#47 /www/wwwroot/2ddjjcs/lijun/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#48 /www/wwwroot/2ddjjcs/lijun/public/index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#49 {main}  
+[2024-07-16 12:21:59] local.INFO: {"name":"yipchimin","amount":"45.83","api_id":298,"time":"20240716122159","type":1,"before_amount":"1273.16","api_name":"PG","date":"2024-07-16 12:21:59"}  
+[2024-07-16 13:03:39] local.INFO: 管理员IP182.239.88.211--管理员ID->2  
+[2024-07-16 13:07:19] local.INFO: {"name":"yipchimin","amount":"20","api_id":298,"time":"20240716130719","type":1,"before_amount":"1228.16","api_name":"PG","date":"2024-07-16 13:07:19"}  
+[2024-07-16 13:27:40] local.INFO: {"name":"yipchimin","amount":"20","api_id":298,"time":"20240716132740","type":1,"before_amount":"1208.16","api_name":"PG","date":"2024-07-16 13:27:40"}  
+[2024-07-16 13:28:09] local.INFO: {"name":"jojo0703","amount":"46.03","api_id":286,"time":"20240716132809","type":1,"before_amount":"-67426.60","api_name":"JD","date":"2024-07-16 13:28:09"}  
+[2024-07-16 13:33:26] local.INFO: {"name":"yipchimin","amount":"20","api_id":298,"time":"20240716133326","type":1,"before_amount":"1188.16","api_name":"PG","date":"2024-07-16 13:33:26"}  
+[2024-07-16 13:33:40] local.INFO: {"name":"yipchimin","amount":"20","api_id":298,"time":"20240716133340","type":1,"before_amount":"1168.16","api_name":"PG","date":"2024-07-16 13:33:40"}  
+[2024-07-16 13:33:57] local.INFO: {"name":"yipchimin","amount":40,"api_id":298,"time":"20240716133357","type":2,"after_money":"1148.16","api_name":"PG","date":"2024-07-16 13:33:57"}  
+[2024-07-16 13:34:01] local.INFO: {"name":"yipchimin","amount":"20","api_id":298,"time":"20240716133401","type":1,"before_amount":"1188.16","api_name":"PG","date":"2024-07-16 13:34:01"}  
+[2024-07-16 13:36:04] local.INFO: {"name":"yipchimin","amount":"40.83","api_id":298,"time":"20240716133604","type":1,"before_amount":"1168.16","api_name":"PG","date":"2024-07-16 13:36:04"}  
+[2024-07-16 13:56:50] local.INFO: 管理员IP182.239.88.211--管理员ID->2  
+[2024-07-16 13:57:15] local.INFO: {"name":"yipchimin","amount":"30","api_id":298,"time":"20240716135715","type":1,"before_amount":"1128.16","api_name":"PG","date":"2024-07-16 13:57:15"}  
+[2024-07-16 13:57:45] local.INFO: {"name":"yipchimin","amount":"20","api_id":298,"time":"20240716135745","type":1,"before_amount":"1098.16","api_name":"PG","date":"2024-07-16 13:57:45"}  
+[2024-07-16 13:58:13] local.INFO: {"name":"yipchimin","amount":"20","api_id":298,"time":"20240716135813","type":1,"before_amount":"1078.16","api_name":"PG","date":"2024-07-16 13:58:13"}  
+[2024-07-16 13:58:23] local.INFO: {"name":"yipchimin","amount":"20","api_id":298,"time":"20240716135823","type":1,"before_amount":"1058.16","api_name":"PG","date":"2024-07-16 13:58:23"}  
+[2024-07-16 14:43:34] local.INFO: {"name":"yipchimin","amount":309,"api_id":298,"time":"20240716144334","type":2,"after_money":"1038.16","api_name":"PG","date":"2024-07-16 14:43:34"}  
+[2024-07-16 14:43:42] local.INFO: {"name":"yipchimin","amount":"20","api_id":298,"time":"20240716144342","type":1,"before_amount":"1347.16","api_name":"PG","date":"2024-07-16 14:43:42"}  
+[2024-07-16 15:48:34] local.INFO: {"name":"yipchimin","amount":"20","api_id":298,"time":"20240716154834","type":1,"before_amount":"1327.16","api_name":"PG","date":"2024-07-16 15:48:34"}  
+[2024-07-16 16:05:39] local.INFO: {"name":"yipchimin","amount":"20","api_id":298,"time":"20240716160539","type":1,"before_amount":"1307.16","api_name":"PG","date":"2024-07-16 16:05:39"}  
+[2024-07-16 16:06:30] local.INFO: {"name":"yipchimin","amount":"20","api_id":272,"time":"20240716160630","type":1,"before_amount":"10521.32","api_name":"CQ","date":"2024-07-16 16:06:30"}  
+[2024-07-16 16:09:18] local.INFO: {"name":"yipchimin","amount":"20","api_id":298,"time":"20240716160918","type":1,"before_amount":"1287.16","api_name":"PG","date":"2024-07-16 16:09:18"}  
+[2024-07-16 18:54:33] local.INFO: {"name":"yipchimin","amount":"19","api_id":272,"time":"20240716185433","type":1,"before_amount":"10501.32","api_name":"CQ","date":"2024-07-16 18:54:33"}  
+[2024-07-16 18:54:59] local.INFO: {"name":"yipchimin","amount":"20","api_id":272,"time":"20240716185459","type":1,"before_amount":"10501.32","api_name":"CQ","date":"2024-07-16 18:54:59"}  
+[2024-07-16 18:55:11] local.INFO: {"name":"yipchimin","amount":"20","api_id":298,"time":"20240716185511","type":1,"before_amount":"1267.16","api_name":"PG","date":"2024-07-16 18:55:11"}  
+[2024-07-16 18:58:49] local.INFO: {"name":"yipchimin","amount":"20","api_id":298,"time":"20240716185849","type":1,"before_amount":"1247.16","api_name":"PG","date":"2024-07-16 18:58:49"}  
+[2024-07-16 19:01:32] local.INFO: {"name":"yipchimin","amount":"20","api_id":298,"time":"20240716190132","type":1,"before_amount":"1227.16","api_name":"PG","date":"2024-07-16 19:01:32"}  
+[2024-07-16 19:03:17] local.INFO: {"name":"yipchimin","amount":"20","api_id":298,"time":"20240716190317","type":1,"before_amount":"1207.16","api_name":"PG","date":"2024-07-16 19:03:17"}  
+[2024-07-16 19:06:05] local.INFO: {"name":"yipchimin","amount":"20","api_id":298,"time":"20240716190605","type":1,"before_amount":"1187.16","api_name":"PG","date":"2024-07-16 19:06:05"}  
+[2024-07-16 19:08:41] local.INFO: {"name":"yipchimin","amount":"20","api_id":298,"time":"20240716190841","type":1,"before_amount":"1167.16","api_name":"PG","date":"2024-07-16 19:08:41"}  
+[2024-07-16 19:34:19] local.INFO: {"name":"yipchimin","amount":194,"api_id":298,"time":"20240716193419","type":2,"after_money":"1147.16","api_name":"PG","date":"2024-07-16 19:34:19"}  
+[2024-07-16 19:34:30] local.INFO: {"name":"yipchimin","amount":"20","api_id":298,"time":"20240716193430","type":1,"before_amount":"1341.16","api_name":"PG","date":"2024-07-16 19:34:30"}  
+[2024-07-16 19:38:52] local.INFO: {"name":"yipchimin","amount":"20","api_id":298,"time":"20240716193852","type":1,"before_amount":"1321.16","api_name":"PG","date":"2024-07-16 19:38:52"}  
+[2024-07-16 19:44:09] local.INFO: {"name":"yipchimin","amount":"20","api_id":298,"time":"20240716194409","type":1,"before_amount":"1301.16","api_name":"PG","date":"2024-07-16 19:44:09"}  
+[2024-07-16 20:21:14] local.INFO: {"name":"yipchimin","amount":"20","api_id":298,"time":"20240716202114","type":1,"before_amount":"1281.16","api_name":"PG","date":"2024-07-16 20:21:14"}  
+[2024-07-16 20:33:48] local.INFO: {"name":"yipchimin","amount":"20","api_id":298,"time":"20240716203348","type":1,"before_amount":"1261.16","api_name":"PG","date":"2024-07-16 20:33:48"}  
+[2024-07-16 20:40:58] local.INFO: {"name":"yipchimin","amount":"20","api_id":298,"time":"20240716204058","type":1,"before_amount":"1241.16","api_name":"PG","date":"2024-07-16 20:40:58"}  
+[2024-07-16 20:41:15] local.INFO: {"name":"yipchimin","amount":"20","api_id":298,"time":"20240716204115","type":1,"before_amount":"1221.16","api_name":"PG","date":"2024-07-16 20:41:15"}  
+[2024-07-16 21:17:06] local.INFO: {"name":"yipchimin","amount":385,"api_id":298,"time":"20240716211706","type":2,"after_money":"1201.16","api_name":"PG","date":"2024-07-16 21:17:06"}  
+[2024-07-16 23:01:34] local.INFO: 管理员IP182.239.85.104--管理员ID->2  
+[2024-07-16 23:23:43] local.INFO: {"name":"jojo0703","amount":"240.06","api_id":286,"time":"20240716232343","type":1,"before_amount":"-67472.63","api_name":"JD","date":"2024-07-16 23:23:43"}  
+[2024-07-16 23:24:01] local.INFO: {"name":"jojo0703","amount":"240.06","api_id":272,"time":"20240716232401","type":1,"before_amount":"10501.32","api_name":"CQ","date":"2024-07-16 23:24:01"}  
+[2024-07-16 23:24:10] local.INFO: {"name":"jojo0703","amount":"240.06","api_id":298,"time":"20240716232410","type":1,"before_amount":"1586.16","api_name":"PG","date":"2024-07-16 23:24:10"}  

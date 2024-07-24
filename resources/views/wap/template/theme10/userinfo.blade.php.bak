@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)/m/nav -->
+<html style="font-size:52.400000000000006px !important"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+    <title>{{ $_system_config->site_title}}</title>
+    <meta name="csrf-token" content="YDo4JRuWXJvw0xMWks04m1wWy4YRz4UeJMzdfzr4">
+	<link type="text/css" rel="stylesheet" href="/new/css/swiper.css">
+	<link type="text/css" rel="stylesheet" href="/new/css/reset.css">
+	<link type="text/css" rel="stylesheet" href="/new/css/style.css">
+	<link rel="apple-touch-icon" href="/wap/images/iconq.png">
+
+	<script type="text/javascript" src="/new/css/jquery.js"></script>
+	<script type="text/javascript" src="/new/css/font.js"></script>
+	<script type="text/javascript" src="/new/css/swiper.min.js"></script>
+	<script type="text/javascript" src="/new/css/jquery.SuperSlide.2.1.js"></script>
+
+	
+    	<meta name="apple-mobile-web-app-capable" content="yes"><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+    <meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+<link href="/new/css/layer.css" type="text/css" rel="styleSheet" id="layermcss"></head>
+
+
+<body class="m_bac">
+
+
+	<div class="nytop">
+		<a href="javascript:history.go(-1);" class="fhbtn"></a>
+		<h1>{{trans("lang.wode")}}</h1>
+	</div>
+	
+	<!--<div data-v-7ada146e="" class="rainIcon-countdown" style="animation: bounce-data-v-7ada146e 1.5s cubic-bezier(.28,.84,.42,1) infinite;">-->
+	<!--    <img data-v-7ada146e="" src="/new/img/agent.png">-->
+	<!--</div>-->
+	
+	
+	<div class="grzx">
+		<div class="grzxbox">
+			<h2>{{ $_member -> name }}</h2>
+						<p onclick="location.href='/m/service'"><span class="fr"><a class="btn1"></a></span><i class="xtb1"></i>修改密码</p>
+			
+			<ul>
+                @if($_member->is_daili)
+				<li><span><i class=" xtb3 "></i>{{trans("lang.bdsj")}}</span></li>
+				@endif
+				<li style="float: right;"  onclick="location.href='/m/agent'">
+				    <span style="line-height:1.5">
+				        <img src="/new/img/agent.png" style="float: left;margin-right:5px;width:20px;" >{{trans("lang.dlzx")}}
+				    </span>
+				</li>
+			    <li style="float: right;width:40%;"  onclick="location.href='/m/bank'">
+				    <span style="line-height:1.5">
+				     <span class="fr"><a class="btn1"></a></span><i class="xtb6"></i>銀行卡管理
+				    </span>
+				</li>
+
+			</ul>
+			
+		</div>
+	</div>
+	<div class="zzc">
+		<div class="zzc_tit">
+			<h2>{{trans("lang.zzhye")}}</h2>
+		</div>
+		<div class="zzc_nr">
+			<span id="session" style="display:none;">{{ $_member -> money }}</span>
+			<p>
+			</p><div style="width:100%;overflow: hidden;">
+				<span style="display:block;float:left;width:.45rem;margin-right: .16rem;"><i class="xtb5">$</i></span>
+				<span id="gamemoney" style="color: #eb8f74;font-size: .48rem;display:block;float:left;width:52%;line-height: .48rem;">{{ $_member -> money }}</span>
+				<!--<span style="display:block;float:right;"><a href="javascript:void(0);" onclick="aaaa()" class="refresh11" style="height: .5rem;line-height: .5rem;background: linear-gradient(to right, #ec5c4d , #fa2563);border-radius: 1.2rem;padding: 0 15px;">資金回收</a></span>-->
+			</div>
+			<p></p>
+			<ul>
+				<li><a href="/m/recharge" class="on1"><i class="xtb6"></i>{{trans("lang.chongzhi")}}</a></li>
+				<li><a href="javascript:void(0);" class="xmjf"><i class="xtb10"></i>返水</a></li>
+				<li><a href="/m/drawing"><i class="xtb8"></i>{{trans("lang.tixian")}}</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="zzc">
+		<div class="zzc_tit">
+			<h2><span class="fr"><a href="/m/msg">全部消息</a></span>消息</h2>
+		</div>
+		<div class="qbhd_nr">
+			<ul>
+					<li>
+						<div class="qbhdbox">
+						    @if($msg)
+						        <h3 style="color:#fff;line-height: 1.2;">{{$msg->content}}</h3>
+							@else
+						        <h3>暫無記錄</h3>
+						    @endif
+							
+						</div>
+					</li>
+			</ul>
+		</div>
+	</div>
+	<div class="zzc">
+		<div class="zzc_tit">
+			<h2><span class="fr"><a href="/m/activity_list">更多</a></span>福利活動</h2>
+		</div>
+		<div class="qbhd_nr">
+			<ul>
+			    @foreach($data as $k => $item)
+				    <li>
+							<a href="{{ route('wap.activity_detail', ['id' => $item->id]) }}">
+								<div class="qbhdbox">
+									<span class="xtb9"></span>
+									<h2>{{$item->title}}</h2>
+									<p>{{$item->hdsj}}</p>
+									<span class="xtb7"></span>
+								</div>
+							</a>
+				    </li>
+				@endforeach		
+			</ul>
+		</div>
+		<!--<div style="background: linear-gradient(to right, #d3b99e , #caa167);border-radius: .12rem;text-align: center;">-->
+		<!--	<a href="/m/my_activity" style="color:#fff;display: block;padding: .32rem 0;">活動列表</a>-->
+		<!--</div>-->
+	</div>
+	<div class="zzc" style="padding-bottom:3%;">
+		<div class="zzc_tit">
+			<h2><span class="fr"><a href="/m/recharge_record">詳細</a></span>報表</h2>
+		</div>
+		<div class="qbhd_nr">
+			<ul>
+				<li>
+					<div class="zxjl">
+						<div class="zxjl_left">
+							<img src="/new/css/a47.png">
+							<p>存款</p>
+						</div>
+
+						<div class="zxjl_right">
+						    @if($recharge)
+						    <b class="fr">
+								<h2>
+								    @if($recharge->status==1)待确认@endif
+								    @if($recharge->status==2)<font color="#20a53a">成功</font>@endif
+								    @if($recharge->status==3)<font color="#ff3300">失败</font>@endif
+								</h2>
+							</b>
+							<p><span>{{date('m-d',strtotime($recharge->created_at))}}</span>{{$recharge->money}}元</p>
+							<p>
+								<span>{{date('i:s',strtotime($recharge->created_at))}}</span><em>
+									{{ config('platform.recharge_type')[$recharge->payment_type] }}
+								</em>
+							</p>
+						    @else
+						        <h2 style="margin-right:.4rem">暫無記錄</h2>
+						    @endif
+							
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="zxjl">
+						<div class="zxjl_left">
+							<img src="/new/css/a49.png">
+							<p>提現</p>
+						</div>
+						<div class="zxjl_right">
+							@if($drawing)
+						    <b class="fr">
+								<h2>
+								    @if($drawing->status==1)待确认@endif
+								    @if($drawing->status==2)<font color="#20a53a">成功</font>@endif
+								    @if($drawing->status==3)<font color="#ff3300">失败</font>@endif
+								</h2>
+							</b>
+							<p><span>{{date('m-d',strtotime($drawing->created_at))}}</span>{{$drawing->money}}元</p>
+							<p>
+								<span> {{date('i:s',strtotime($drawing->created_at))}}</span><em>
+									{{ $drawing->bank_name }}
+								</em>
+							</p>
+						    @else
+						        <h2 style="margin-right:.4rem">暫無記錄</h2>
+						    @endif
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<a href="javascript:;" class="btn2" onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{trans("lang.tcdl")}}</a>
+	</div>
+
+
+	<!-- 反水 -->
+	<div class="bj"></div>
+	<div class="cmtc">
+		<form action="/m/send_fsss" method="post" onsubmit="$('.submit-form-sync').attr('disabled',true);">
+			<div class="cmtc_tit"><h2>{{trans("lang.ssfs")}}</h2><span class="btn3 ggbtn"></span></div>
+			<div class="cmnr">
+								<h2><span>$&nbsp;</span><strong id="zongfangshui">{{$total['fs_money']}}</strong></h2>
+				<p class="xmsm">自主洗碼，實時結算，請投注達標後再試！</p>
+				<!--<i class="zkcq">詳細展開</i>-->
+				<!--<ul class="nrxg">-->
+				<!--	<li><span>遊戲</span></li>-->
+				<!--	<li><span>投注額</span></li>-->
+				<!--	<li><span>洗碼比例</span></li>-->
+				<!--	<li><span>洗碼金額</span></li>-->
+				<!--	<li>真人</li>-->
+				<!--	<li id="zhenrentz_amount">0.00</li>-->
+				<!--	<li id="zhenrenbili">0</li>-->
+				<!--	<li id="zhenrenfs">0.00</li>-->
+				<!--	<li>電子遊戲</li>-->
+				<!--	<li id="dianzitz_amount">0.00</li>-->
+				<!--	<li id="dianzibili">0</li>-->
+				<!--	<li id="dianzifs">0.00</li>-->
+				<!--	<li>捕魚</li>-->
+				<!--	<li id="buyutz_amount">0.00</li>-->
+				<!--	<li id="buyubili">0</li>-->
+				<!--	<li id="buyufs">0</li>-->
+				<!--	<li>體育</li>-->
+				<!--	<li id="tiyutz_amount">0.00</li>-->
+				<!--	<li id="tiyubili">0</li>-->
+				<!--	<li id="tiyufs">0.00</li>-->
+				<!--	<li>棋牌</li>-->
+				<!--	<li id="qipaitz_amount">0.00</li>-->
+				<!--	<li id="qipaibili">0</li>-->
+				<!--	<li id="qipaifs">0.00</li>-->
+				<!--	<li>彩票</li>-->
+				<!--	<li id="caipiaotz_amount">0.00</li>-->
+				<!--	<li id="caipiaobili">0</li>-->
+				<!--	<li id="caipiaofs">0.00</li>-->
+
+				<!--	<li>JOKER(2倍)</li>-->
+				<!--	<li id="joker_2_tz_amount">0.00</li>-->
+				<!--	<li id="joker_2_bili">0</li>-->
+				<!--	<li id="joker_2_fs">0.00</li>-->
+
+				<!--	<li>JOKER(5倍)</li>-->
+				<!--	<li id="joker_5_tz_amount">0.00</li>-->
+				<!--	<li id="joker_5_bili">0</li>-->
+				<!--	<li id="joker_5_fs">0.00</li>-->
+
+				<!--	<li>JOKER(10倍)</li>-->
+				<!--	<li id="joker_10_tz_amount">0.00</li>-->
+				<!--	<li id="joker_10_bili">0</li>-->
+				<!--	<li id="joker_10_fs">0.00</li>-->
+
+				<!--	<li>JOKER(20倍)</li>-->
+				<!--	<li id="joker_20_tz_amount">0.00</li>-->
+				<!--	<li id="joker_20_bili">0</li>-->
+				<!--	<li id="joker_20_fs">0.00</li>-->
+
+				<!--	<li>電競</li>-->
+				<!--	<li id="dianjingtz_amount">0.00</li>-->
+				<!--	<li id="dianjingbili">0</li>-->
+				<!--	<li id="dianjingfs">0.00</li>-->
+				<!--</ul>-->
+			</div>
+			<div class="cmbtn">
+				<ul>
+					<li><a href="javascript:void(0);" class="btn3">取消</a></li>
+					<li>
+						<button type="button" class="btn4 ajax-submit-btn" id="fanshuic">
+							{{trans("lang.qr")}}
+						</button>
+					</li>
+				</ul>
+			</div>
+		</form>
+	</div>
+
+	<script type="text/javascript">
+		$('.zkcq').click(function(){
+			if($(this).hasClass('on2')){
+				$(this).removeClass('on2');
+				$(this).siblings('.nrxg').css('height','0');
+				$(this).html('詳細展開');
+			}else{
+				$(this).addClass('on2');
+				$(this).siblings('.nrxg').css('height','auto');
+				$(this).html('收起');
+			}
+		})
+	</script>
+	<script type="text/javascript">
+	$('#fanshuic').click(function(){
+	    var btn = $('#fanshuic');
+        btn.attr("disabled",true);
+        $.ajax({
+            url : "{{route('wap.send_fs')}}",
+            type : 'POST',
+            success : function (data) {
+                alert(data.status.msg);
+                if(data.status.errorCode == 0){
+                    btn.attr("disabled",false);
+                    location.href=data.url;
+                }
+            }
+        })
+        return false;
+	})
+        
+		$('.xmjf').click(function(){
+			//loading层
+// 			layer.open({type: 2});
+			$('.cmtc').css('bottom','.12rem');
+			$('.bj').fadeIn();
+// 			$.ajax({
+// 				type:'POST',
+// 				url:'/m/ajax_fs',
+// 				dataType:'json',
+// 				cache: false,
+// 				error: function() {
+// 					alert('Failed!! Please Try Again!!');
+// 					return false;
+// 				},
+// 				success: function(data) {
+// 					layer.closeAll();
+
+// 					if(data.code == 1) {
+
+// 						$('#zongfangshui').html(data.data.zongfanshui);
+// 						$('#all_fs').val(data.data.zongfanshui);
+
+// 						$('#zhenrentz_amount').html(data.data.zhenrentz_amount);
+// 						$('#zhenrenbili').html(data.data.zhenrenbili);
+// 						$('#zhenrenfs').html(data.data.zhenrenfs);
+
+// 						$('#dianzitz_amount').html(data.data.dianzitz_amount);
+// 						$('#dianzibili').html(data.data.dianzibili);
+// 						$('#dianzifs').html(data.data.dianzifs);
+
+// 						$('#buyutz_amount').html(data.data.buyutz_amount);
+// 						$('#buyubili').html(data.data.buyubili);
+// 						$('#buyufs').html(data.data.buyufs);
+
+// 						$('#tiyutz_amount').html(data.data.tiyutz_amount);
+// 						$('#tiyubili').html(data.data.tiyubili);
+// 						$('#tiyufs').html(data.data.tiyufs);
+
+// 						$('#qipaitz_amount').html(data.data.qipaitz_amount);
+// 						$('#qipaibili').html(data.data.qipaibili);
+// 						$('#qipaifs').html(data.data.qipaifs);
+
+// 						$('#caipiaotz_amount').html(data.data.caipiaotz_amount);
+// 						$('#caipiaobili').html(data.data.caipiaobili);
+// 						$('#caipiaofs').html(data.data.caipiaofs)
+
+// 						$('#joker_2_tz_amount').html(data.data.joker_2_tz_amount);
+// 						$('#joker_2_bili').html(data.data.joker_2_bili);
+// 						$('#joker_2_fs').html(data.data.joker_2_fs)
+
+// 						$('#joker_5_tz_amount').html(data.data.joker_5_tz_amount);
+// 						$('#joker_5_bili').html(data.data.joker_5_bili);
+// 						$('#joker_5_fs').html(data.data.joker_5_fs)
+
+// 						$('#joker_10_tz_amount').html(data.data.joker_10_tz_amount);
+// 						$('#joker_10_bili').html(data.data.joker_10_bili);
+// 						$('#joker_10_fs').html(data.data.joker_10_fs);
+
+// 						$('#joker_20_tz_amount').html(data.data.joker_20_tz_amount);
+// 						$('#joker_20_bili').html(data.data.joker_20_bili);
+// 						$('#joker_20_fs').html(data.data.joker_20_fs)
+
+// 						$('#dianjingtz_amount').html(data.data.dianjingtz_amount);
+// 						$('#dianjingbili').html(data.data.dianjingbili);
+// 						$('#dianjingfs').html(data.data.dianjingfs)
+
+// 						$('#game_str').val(data.data.game_str)
+// 						$('.cmtc').css('bottom','.12rem');
+// 						$('.bj').fadeIn();
+// 					}
+// 				}
+// 			});
+
+		})
+		$('.btn3').click(function(){
+			$('.cmtc').css('bottom','-15rem');
+			$('.bj').fadeOut();
+		})
+	</script>
+
+	<!-- 系统消息弹出框 -->
+	<div class="cd-popup" role="alert">
+		<div class="cd-popup-container">
+			<p id="msg-content"></p>
+			<ul class="cd-buttons">
+				<li><a href="javascript:void(0)">確&nbsp;定</a></li>
+			</ul>
+			<a href="/m/nav#" class="cd-popup-close img-replace">关闭</a>
+		</div> <!-- cd-popup-container -->
+	</div>
+	<script>
+		jQuery(document).ready(function($){
+			//open popup
+			$('.ace').on('click', function(event){
+				event.preventDefault();
+				var uid = $(this).attr('uid');
+				var msgId = $(this).attr('msgId');
+				var type = $(this).attr('type');
+				$.ajax({
+					type:'GET',
+					url:'/post_msg',
+					dataType:'json',
+					data: {'id': msgId,'type':type,'uid':uid},
+					cache: false,
+					error: function() {
+						alert('Failed!! Please Try Again!!');
+						return false;
+					},
+					success: function(data) {
+						var content = data.content;
+						$('#msg-content').html('');
+						$('#msg-content').html(content);
+						$('#du').html('已讀')
+					}
+				});
+				$('.cd-popup').addClass('is-visible');
+			});
+
+			//close popup
+			$('.cd-popup').on('click', function(event){
+				if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
+					event.preventDefault();
+					$(this).removeClass('is-visible');
+				}
+			});
+			$('.cd-buttons a').click(function(){
+				$('.cd-popup').removeClass('is-visible');
+			})
+			//close popup when clicking the esc keyboard button
+			$(document).keyup(function(event){
+				if(event.which=='27'){
+					$('.cd-popup').removeClass('is-visible');
+				}
+			});
+		});
+	</script>
+	<!-- 系统消息弹出框结束 -->
+
+	<script type="text/javascript" src="/new/css/qingqiu.js"></script> <!-- 余额时时请求 -->
+	<script>
+		function aaaa(){
+			$('.refresh11').each(function(){
+				var _this=$(this);
+
+				_this.html('回收中...');
+
+				_this.removeAttr('onclick')
+				$.post('/api/trans_all', function (data) {
+					if ( data['code'] == 0 ) {
+
+						_this.html('資金回收');
+						_this.attr('onclick','aaaa()')
+					}else{
+						alert(data['msg']);
+						_this.attr('onclick','aaaa()')
+					}
+
+				});
+			});
+
+		}
+	</script>
+
+@extends('wap.template.theme10.layouts.fotter')
+<form id="logout-form" action="{{ route('wap.logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>  
+
+
+<script type="text/javascript">
+    setTimeout(function(){
+        $('#footer5').addClass('cur')
+    },350)
+	$('.gdbtn').click(function(){
+		$('.dhtc').css('bottom','.12rem');
+		$('.bj').fadeIn();
+	})
+	$('.contact').click(function(){
+		$('.contact_content').css('bottom','.12rem');
+		$('.bj').fadeIn();
+	})
+	$('.qxbtn').click(function(){
+		$('.dhtc').css('bottom','-4rem');
+		$('.bj').fadeOut();
+	})
+	$('.qxbtn_2').click(function(){
+		$('.contact_content').css('bottom','-10rem');
+		$('.bj').fadeOut();
+	})
+	$('#lang').change(function () {
+		var lang =  $("#lang option:selected").attr('href');
+		window.location.href = lang;
+
+	})
+	$('.fixBottom a').click(function () {
+		$(this).addClass('cur').siblings().removeClass('cur');
+	})
+</script>
+
+<script type="text/javascript" src="/new/css/layer.js"></script>
+<script type="text/javascript" src="/new/css/wap_ajax-submit-form.js?t=100"></script>
+
+
+</body></html>
